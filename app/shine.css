@@ -1,0 +1,5 @@
+/* 解鎖按鈕閃光；尊重「減少動態」設定 */
+@keyframes shine { 0%{transform:translateX(-120%) skewX(-20deg)} 60%,100%{transform:translateX(320%) skewX(-20deg)} }
+.btn-shine{position:relative;overflow:hidden}
+.btn-shine::after{content:"";position:absolute;inset:0;width:35%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.75),transparent);animation:shine 2.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.btn-shine::after{animation:none;display:none}}
